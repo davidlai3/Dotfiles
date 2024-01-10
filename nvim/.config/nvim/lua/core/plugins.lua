@@ -40,6 +40,9 @@ return require('packer').startup(function(use)
 			requires = {{'nvim-lua/plenary.nvim'}}
 		}
 
+		-- Git stuff
+		use 'NeogitOrg/neogit'
+
 		-- LSP
 		use {
 			'williamboman/mason.nvim',

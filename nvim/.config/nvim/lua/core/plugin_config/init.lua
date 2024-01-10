@@ -7,5 +7,5 @@ require ("core.plugin_config.copilot")
 require ("core.plugin_config.completions")
 require ("core.plugin_config.autopairs")
 require ("core.plugin_config.treesitter")
-
+require ("core.plugin_config.neogit")
 
