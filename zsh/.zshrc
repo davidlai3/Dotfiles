@@ -74,6 +74,9 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-s
 
 source $ZSH/oh-my-zsh.sh
 
+bindkey -v
+bindkey '^F' autosuggest-accept
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -101,9 +104,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# Path stuff
+# Find .h files for c++
 export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
 
+# C config
+export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:../include
+set exrc
+set secure
+
+# Texlive
 export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH:/home/david/.local/bin
 export PATH=$PATH:/opt/idea/bin
 
@@ -111,5 +120,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-
+# opam configuration
+[[ ! -r /home/david/.opam/opam-init/init.zsh ]] || source /home/david/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

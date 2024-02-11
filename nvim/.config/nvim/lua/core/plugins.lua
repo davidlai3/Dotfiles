@@ -88,6 +88,9 @@ return require('packer').startup(function(use)
 			end
 		})
 
+		-- Emmet for html
+		use 'mattn/emmet-vim'
+
 
     if packer_bootstrap then
         require('packer').sync()
