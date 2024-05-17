@@ -107,13 +107,11 @@ bindkey '^F' autosuggest-accept
 # Find .h files for c++
 export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
 
-# C config
+# Find .h files for c
 export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:../include
-set exrc
-set secure
 
 # Texlive
-export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH:/home/david/.local/bin
+export PATH=/usr/local/texlive/2024/bin/x86_64-linux:$PATH:/home/david/.local/bin
 export PATH=$PATH:/opt/idea/bin
 
 export NVM_DIR="$HOME/.nvm"

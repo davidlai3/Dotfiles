@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "ef6f2a4b8cbc757c",
+    "type": "split",
+    "children": [
+      {
+        "id": "f3842b9a6b1a3d7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "84bb2589d30e6daa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Assembly Basics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8b84989dbec78c36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Table of Contents.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0f8e09de4d5fac9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Assembly Branches and Loops.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "845c9831bb2587c3",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "CSE220/Images/Pasted image 20240328085739.png"
+              }
+            }
+          },
+          {
+            "id": "e411086fed3504a7",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "CSE220/Images/Pasted image 20240326112838.png"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1b180ee7723ab1d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba6c1cf6ee2834e3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e9f5408cf112bec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c52d5e5a32ad7cb1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "shift",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cb20327e167744f2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "e4a2ba50282f26e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ecb028d86bac58b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fc2ffa72f01b8aa1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Assembly Basics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d7b6c49ca70338c4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Assembly Basics.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e530a146897dfa0b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8205b889604f5a0b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "CSE220/MIPS/MIPS Assembly Basics.md"
+              }
+            }
+          },
+          {
+            "id": "99e31575a6af589c",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-focus-mode:Toggle Focus Mode (Shift + Click to show active pane only)": false
+    }
+  },
+  "active": "84bb2589d30e6daa",
+  "lastOpenFiles": [
+    "CSE220/MIPS/MIPS Architecture Single-Cycle Processors.md",
+    "CSE216/Midterm 2 Review Session.md",
+    "CSE220/C Programming/Low Level Programming.md",
+    "CSE220/MIPS/MIPS Assembly Basics.md",
+    "CSE220/MIPS/MIPS Assembly Branches and Loops.md",
+    "CSE220/MIPS/MIPS Assembly Functions and the Run-time Stack.md",
+    "CSE220/MIPS/MIPS Table of Contents.md",
+    "CSE220/Images/Pasted image 20240328085739.png",
+    "CSE220/Images/Pasted image 20240326112838.png",
+    "CSE220/MIPS/MIPS Pipelined Processors.md",
+    "CSE220/MIPS/MIPS Microarchitecture Circuitry.md",
+    "CSE220/MIPS/MIPS Assembly Strings and Other Arrays.md",
+    "CSE220/Recitation/Recitation 12.md",
+    "CSE220/Weaknesses.md",
+    "CSE220/Images/Pasted image 20240425103414.png",
+    "CSE220/Images/Pasted image 20240425105859.png",
+    "CSE220/Images/Pasted image 20240425104915.png",
+    "Untitled.md",
+    "CSE220/Images/Pasted image 20240425105056.png",
+    "CSE216/OOP in Python.md",
+    "CSE216/Functional Programming in Java.md",
+    "CSE216/Weaknesses.md",
+    "CSE216/Types and Polymorphism.md",
+    "CSE216/Recitation/Recitation 11.md",
+    "CSE220/Images/Pasted image 20240423101936.png",
+    "CSE216/Recitation/Recitation 10.md",
+    "CSE216/Recitation/Recitation 9.md",
+    "CSE220/Images/Pasted image 20240423104714.png",
+    "CSE220/C Programming/Expressions.md",
+    "CSE220/Networks/Network Organization and Architecture.md",
+    "CSE220/Images/Pasted image 20240423105735.png",
+    "CSE220/Networks/Networking Table of Contents.md",
+    "Pasted image 20240423105652.png",
+    "CSE220/Recitation",
+    "CSE216/Parameter Passing.md",
+    "CSE216/Recitation/Recitation 8.md",
+    "CSE220/C Programming/The C Preprocessor.md",
+    "Untitled.canvas",
+    "CSE220/C Programming",
+    "CSE220/Networks",
+    "CSE220/MIPS",
+    "CSE216/Recitation",
+    "CSE216/Images",
+    "CSE220/Images",
+    "CSE216",
+    "CSE220"
+  ]
+}

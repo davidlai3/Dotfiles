@@ -3,7 +3,7 @@ require("core.plugins")
 require("core.plugin_config")
 
 
+-- Relative line numbers
+vim.cmd([[set relativenumber]])
 
 
--- vim.o.background = "light"
--- vim.cmd([[colorscheme gruvbox]])
