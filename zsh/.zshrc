@@ -120,3 +120,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # opam configuration
 [[ ! -r /home/david/.opam/opam-init/init.zsh ]] || source /home/david/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
