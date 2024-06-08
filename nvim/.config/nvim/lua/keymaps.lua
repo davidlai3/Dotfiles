@@ -4,12 +4,16 @@ local conf = { noremap = true, silent = true }
 local recur = { silent = true }
                           
 local k = vim.api.nvim_set_keymap
-                          
+
 -- Keyboard shortcuts and mappings    
 vim.o.tabstop = 4      -- Number of spaces for a TAB character      
 vim.o.shiftwidth = 4 -- Number of spaces to use for autoindent    
 vim.o.softtabstop = 4  -- Number of spaces for <Tab> and <BS> in insert mode
 vim.wo.number = true   -- Show line numbers    
+
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- jk > ESC
 k("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
