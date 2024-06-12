@@ -33,3 +33,4 @@ k("v", "J", ":m '>+1<CR>gv=gv", {desc = "Stays in place during join"})
 k("v", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "J", ":m '>+1<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
+

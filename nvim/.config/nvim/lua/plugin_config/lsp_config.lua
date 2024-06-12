@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "pyright", "tsserver", "rust_analyzer", "clangd", "html", "ocamllsp"},
+	ensure_installed = {"lua_ls", "pyright", "tsserver", "rust_analyzer", "clangd", "html", "ocamllsp", "texlab"},
 })
 
 
@@ -39,7 +39,7 @@ require("lspconfig").rust_analyzer.setup {
 
 require("lspconfig").clangd.setup {
 	on_attach = on_attach,
-	capabilities = capabilities
+	capabilities = capabilities,
 }
 
 require("lspconfig").ocamllsp.setup {

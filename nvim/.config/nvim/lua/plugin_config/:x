@@ -2,6 +2,7 @@ local cmp = require'cmp'
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
+
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -15,8 +16,7 @@ cmp.setup({
 	},
 	mapping = {
 
-		-- Safe selection (makes command line completion no work)
-		--[[
+		-- Safe selection
 		["<CR>"] = cmp.mapping({
 			i = function(fallback)
 				if cmp.visible() and cmp.get_active_entry() then
@@ -28,21 +28,6 @@ cmp.setup({
 			s = cmp.mapping.confirm({ select = true }),
 			c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 		}),
-		--]]
-
-		['<CR>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				if luasnip.expandable() then
-					luasnip.expand()
-				else
-				cmp.confirm({
-					select = true,
-				})
-				end
-			else
-				fallback()
-			end
-		end),
 
 		-- Select next/prev item
 		["<Tab>"] = cmp.mapping(function(fallback)

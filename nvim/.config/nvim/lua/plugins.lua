@@ -16,21 +16,34 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.o.termguicolors = true
+
 -- Plugins
 require('lazy').setup({
 
+	-- Color Schemes (Only one can be active)
+	-- 'Mofiqul/dracula.nvim',
+	-- 'ellisonleao/gruvbox.nvim',
+	-- 'lifepillar/vim-solarized8',
+	'overcache/NeoSolarized',
+
+
 	-- Core Packages
-	'ellisonleao/gruvbox.nvim',
 	'nvim-tree/nvim-tree.lua',
-	'nvim-tree/nvim-web-devicons',
-	'nvim-lualine/lualine.nvim',
 	'nvim-treesitter/nvim-treesitter',
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = {
+			'nvim-tree/nvim-web-devicons'
+		}
+	},
 	{
 		'nvim-telescope/telescope.nvim',
 		dependencies = {
 			'nvim-lua/plenary.nvim'
 		}
 	},
+	'sidebar-nvim/sidebar.nvim',
 
 	-- Git 
 	'NeogitOrg/neogit',
