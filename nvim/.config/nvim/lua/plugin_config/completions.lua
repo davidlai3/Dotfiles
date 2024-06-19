@@ -1,6 +1,8 @@
 local cmp = require'cmp'
 local luasnip = require("luasnip")
 local lspkind = require("lspkind")
+vim.cmd "highlight! BorderBG guibg=NONE guifg=#00ff00"
+
 
 cmp.setup({
 	snippet = {
@@ -10,8 +12,13 @@ cmp.setup({
 	end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
-		-- documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({
+			-- Green border
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		}),
+		documentation = cmp.config.window.bordered({
+			winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+		}),
 	},
 	mapping = {
 
