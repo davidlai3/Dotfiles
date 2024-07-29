@@ -27,7 +27,6 @@ require('lazy').setup({
 	-- 'lifepillar/vim-solarized8',
 	'overcache/NeoSolarized',
 
-
 	-- Core Packages
 	'nvim-tree/nvim-tree.lua',
 	'nvim-treesitter/nvim-treesitter',
@@ -67,6 +66,7 @@ require('lazy').setup({
 	'L3MON4D3/LuaSnip',
 	'saadparwaiz1/cmp_luasnip',
 	'rafamadriz/friendly-snippets',
+	"mlaursen/vim-react-snippets",
 
 	{
 	"zbirenbaum/copilot-cmp",
@@ -91,12 +91,10 @@ require('lazy').setup({
 
 	-- Autopairs
 	'jiangmiao/auto-pairs',
+	'windwp/nvim-ts-autotag',
 
 	-- Surround Text
 	'tpope/vim-surround',
-
-	-- React
-	'mlaursen/vim-react-snippets',
 
 	-- Leetcode
 	{
