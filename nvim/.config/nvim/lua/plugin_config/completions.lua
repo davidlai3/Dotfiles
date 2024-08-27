@@ -23,7 +23,6 @@ cmp.setup({
 	mapping = {
 
 		-- Safe selection (makes command line completion no work)
-		--[[
 		["<CR>"] = cmp.mapping({
 			i = function(fallback)
 				if cmp.visible() and cmp.get_active_entry() then
@@ -33,10 +32,13 @@ cmp.setup({
 				end
 			end,
 			s = cmp.mapping.confirm({ select = true }),
-			c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+			c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+			-- fix found on github ^
+			-- c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 		}),
-		--]]
 
+		-- Super tab mapping
+		--[[
 		['<CR>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				if luasnip.expandable() then
@@ -50,6 +52,7 @@ cmp.setup({
 				fallback()
 			end
 		end),
+		]]--
 
 		-- Select next/prev item
 		["<Tab>"] = cmp.mapping(function(fallback)
