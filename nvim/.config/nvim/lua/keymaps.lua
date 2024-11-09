@@ -34,3 +34,10 @@ k("v", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "J", ":m '>+1<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
 
+
+-- Page up and down
+k("n", "J", "<C-f>M", { noremap = true, silent = true })
+k("n", "K", "<C-b>M", { noremap = true, silent = true })
+
+-- Join lines
+k("n", "H", "J", { noremap = true, silent = true })
