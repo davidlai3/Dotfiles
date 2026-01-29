@@ -21,9 +21,13 @@ return {
                     require("luasnip").lsp_expand(args.body)
                 end,
             },
+            performance = {
+                max_view_entries = 10, -- hard cap visible entries
+            },
             window = {
                 completion = cmp.config.window.bordered({
                     border = "rounded", -- or "single", "double", "shadow"
+                    maxheight = 10,
                     winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
                 }),
                 documentation = cmp.config.window.bordered({
