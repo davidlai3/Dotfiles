@@ -128,3 +128,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # Matlab
 export PATH=$PATH:/usr/local/MATLAB/R2025b/bin
+
+# Claude (LOL)
+alias claude="claude --dangerously-skip-permissions"
+
+# Git
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
