@@ -129,8 +129,12 @@ export NVM_DIR="$HOME/.nvm"
 # Matlab
 export PATH=$PATH:/usr/local/MATLAB/R2025b/bin
 
-# Claude (LOL)
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+# AI (LOL)
 alias claude="claude --dangerously-skip-permissions"
+alias codex="codex --yolo"
 
 # Git
 alias gs="git status"
