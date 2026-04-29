@@ -1,5 +1,24 @@
 \usepackage[margin=1in]{geometry}
 
+% Headers / footers
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\newcommand{\setheader}[2]{%
+  \pagestyle{fancy}%
+  \fancyhf{}%
+  \lhead{#1}%
+  \rhead{#2}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+  \fancypagestyle{plain}{%
+    \fancyhf{}%
+    \lhead{#1}%
+    \rhead{#2}%
+    \renewcommand{\headrulewidth}{0.4pt}%
+    \renewcommand{\footrulewidth}{0pt}%
+  }%
+}
+
 % Math
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 
