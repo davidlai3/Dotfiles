@@ -43,6 +43,7 @@ return {
         follow = false,
         keys = {
             ["<cr>"] = "jump_close",
+            ["q"] = "close",
         },
     },
 }
