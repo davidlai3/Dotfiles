@@ -46,11 +46,13 @@ k("v", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "J", ":m '>+1<CR>gv=gv", {desc = "Stays in place during join"})
 k("x", "K", ":m '<-2<CR>gv=gv", {desc = "Stays in place during join"})
 
---[[
--- Page up and down
-k("n", "J", "<C-f>M", { noremap = true, silent = true })
-k("n", "K", "<C-b>M", { noremap = true, silent = true })
-
--- Join lines
-k("n", "H", "J", { noremap = true, silent = true })
-]]
+-- Nice indentation for markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "md" },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+    vim.opt_local.breakindentopt = "list:-1"
+  end,
+})
