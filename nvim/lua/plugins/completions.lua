@@ -96,7 +96,6 @@ return {
 
             },
             sources = cmp.config.sources({
-                { name = "copilot", group_index = 1, priority = 1000, max_item_count = 2 },
                 { name = "nvim_lsp", group_index = 2, priority = 900 },
                 { name = "luasnip", group_index = 2, priority = 800 }, -- For luasnip users.
                 { name = "buffer", group_index = 3, priority = 700 },
@@ -104,17 +103,6 @@ return {
             sorting = {
                 priority_weight = 2,
                 comparators = {
-                    -- absolute rule: copilot always above non-copilot
-                    function(entry1, entry2)
-                        local c1 = entry1.source.name == "copilot"
-                        local c2 = entry2.source.name == "copilot"
-                        if c1 ~= c2 then
-                            return c1 -- true if entry1 is copilot
-                        end
-                    end,
-
-                    require("copilot_cmp.comparators").prioritize,
-
                     cmp.config.compare.offset,
                     cmp.config.compare.exact,
                     cmp.config.compare.score,

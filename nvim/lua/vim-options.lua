@@ -30,6 +30,9 @@ vim.g.maplocalleader = " "
 -- jk > ESC
 k("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- Recent files (telescope's oldfiles picker used to own this)
+k("n", "<leader><leader>", ":browse oldfiles<CR>", { desc = "Recent files" })
+
 -- Copy and paste using system
 -- k("", "<C-p>", "<C-r>+", {desc = "Use Control P to paste from system"})
 k("", "Y", "\"+y", {desc = "Use uppercase Y for system clip(motions work)"})
