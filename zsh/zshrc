@@ -142,3 +142,34 @@ alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
 alias gl="git log"
+
+# Superseded by the session-created hook in ~/.tmux.conf, which covers every
+# way a session gets made (not just the shell). Kept in case that is undone.
+# # tmux: name auto-created sessions with the mex (lowest unused non-negative
+# # integer) instead of tmux's monotonic counter.
+# _tmux_mex_session() {
+#   local i=0
+#   while command tmux has-session -t "=$i" 2>/dev/null; do
+#     (( i++ ))
+#   done
+#   print -r -- "$i"
+# }
+#
+# tmux() {
+#   emulate -L zsh
+#   if (( $# == 0 )); then
+#     command tmux new-session -s "$(_tmux_mex_session)"
+#     return
+#   fi
+#   if [[ $1 == new || $1 == new-session ]]; then
+#     local a
+#     for a in "${@:2}"; do
+#       # an explicit -s (possibly in a flag cluster like -ds) wins
+#       [[ $a == -[^-]*s* ]] && { command tmux "$@"; return }
+#     done
+#     local sub=$1; shift
+#     command tmux "$sub" -s "$(_tmux_mex_session)" "$@"
+#     return
+#   fi
+#   command tmux "$@"
+# }
