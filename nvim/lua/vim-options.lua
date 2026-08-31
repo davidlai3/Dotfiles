@@ -34,6 +34,25 @@ k("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 k("n", "<leader><leader>", ":browse oldfiles<CR>", { desc = "Recent files" })
 
 -- Copy and paste using system
+-- Over ssh there is no local clipboard to talk to, so route "+ through OSC 52
+-- escape sequences instead: the text rides the existing terminal connection out
+-- to whatever terminal is on the other end and lands in *its* clipboard. tmux
+-- passes these through (set-clipboard on, see tmux/.tmux.conf).
+if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    -- Reading the clipboard back needs the terminal to answer an OSC 52 query,
+    -- which nearly every terminal refuses to do for security reasons. Fall back
+    -- to the unnamed register so "+p pastes what "+y last copied.
+    paste = {
+      ["+"] = function() return vim.split(vim.fn.getreg(""), "\n") end,
+      ["*"] = function() return vim.split(vim.fn.getreg(""), "\n") end,
+    },
+  }
+end
+
 -- k("", "<C-p>", "<C-r>+", {desc = "Use Control P to paste from system"})
 k("", "Y", "\"+y", {desc = "Use uppercase Y for system clip(motions work)"})
 
