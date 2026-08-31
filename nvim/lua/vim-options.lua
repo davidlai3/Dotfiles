@@ -40,16 +40,31 @@ k("n", "<leader><leader>", ":browse oldfiles<CR>", { desc = "Recent files" })
 -- passes these through (set-clipboard on, see tmux/.tmux.conf).
 if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
   local osc52 = require("vim.ui.clipboard.osc52")
+
+  -- Mirror of whatever was last sent out over OSC 52, so that "+p still works.
+  -- Reading the real clipboard back would need the terminal to answer an OSC 52
+  -- query, which terminals either prompt for or refuse outright. This cannot be
+  -- served from the unnamed register: after "+y the unnamed register *is* the
+  -- clipboard register, so asking for it re-enters this provider and nvim's
+  -- recursion guard returns empty.
+  local last = { { "" }, "v" }
+
+  local function copy(reg)
+    local send = osc52.copy(reg)
+    return function(lines, regtype)
+      last = { lines, regtype }
+      send(lines, regtype)
+    end
+  end
+
+  local function paste()
+    return last
+  end
+
   vim.g.clipboard = {
     name = "OSC 52",
-    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
-    -- Reading the clipboard back needs the terminal to answer an OSC 52 query,
-    -- which nearly every terminal refuses to do for security reasons. Fall back
-    -- to the unnamed register so "+p pastes what "+y last copied.
-    paste = {
-      ["+"] = function() return vim.split(vim.fn.getreg(""), "\n") end,
-      ["*"] = function() return vim.split(vim.fn.getreg(""), "\n") end,
-    },
+    copy = { ["+"] = copy("+"), ["*"] = copy("*") },
+    paste = { ["+"] = paste, ["*"] = paste },
   }
 end
 

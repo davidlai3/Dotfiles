@@ -29,6 +29,7 @@ LINKS=(
 	"tmux/.tmux.conf|$HOME/.tmux.conf"
 	"claude/statusline.py|$HOME/.claude/statusline.py"
 	"shell/common.sh|$HOME/.config/shell/common.sh"
+	"kitty/kitty.conf|$HOME/.config/kitty/kitty.conf"
 )
 
 # The rcfile is the only shell-specific link; both rcfiles source common.sh
@@ -81,6 +82,14 @@ if ! command -v "$SHELL_KIND" >/dev/null; then
 fi
 if ! command -v nvim >/dev/null; then
 	warn "neovim not on PATH — the nvim config will not load"
+	missing=1
+fi
+# gnome-terminal's VTE has no OSC 52 handler, so a copy made in a remote
+# tmux/nvim over ssh cannot reach the local clipboard. kitty implements it.
+if ! command -v kitty >/dev/null; then
+	warn "kitty not on PATH — kitty.conf is linked but unused, and copying over"
+	warn "    ssh will not reach this machine's clipboard under gnome-terminal:"
+	warn "    sudo apt install kitty"
 	missing=1
 fi
 if [[ $SHELL_KIND == zsh ]]; then
