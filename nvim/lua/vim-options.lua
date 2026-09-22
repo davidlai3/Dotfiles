@@ -93,3 +93,14 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.breakindentopt = "list:-1"
   end,
 })
+
+-- Pick up on-disk changes (e.g. from Claude Code) without reopening the file
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI", "TermClose", "TermLeave" }, {
+  pattern = "*",
+  command = "if mode() != 'c' | checktime | endif",
+})
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
+})

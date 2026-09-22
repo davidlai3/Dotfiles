@@ -4,19 +4,19 @@
 \usepackage{fancyhdr}
 \pagestyle{empty}
 \newcommand{\setheader}[2]{%
-  \pagestyle{fancy}%
-  \fancyhf{}%
-  \lhead{#1}%
-  \rhead{#2}%
-  \renewcommand{\headrulewidth}{0.4pt}%
-  \renewcommand{\footrulewidth}{0pt}%
-  \fancypagestyle{plain}{%
+    \pagestyle{fancy}%
     \fancyhf{}%
     \lhead{#1}%
     \rhead{#2}%
     \renewcommand{\headrulewidth}{0.4pt}%
     \renewcommand{\footrulewidth}{0pt}%
-  }%
+    \fancypagestyle{plain}{%
+        \fancyhf{}%
+        \lhead{#1}%
+        \rhead{#2}%
+        \renewcommand{\headrulewidth}{0.4pt}%
+        \renewcommand{\footrulewidth}{0pt}%
+    }%
 }
 
 % Math
@@ -51,6 +51,11 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}[theorem]{Exercise}
+
+% Homework problems
+\usepackage[most]{tcolorbox}
+\newtcolorbox{question}{colback=white,colframe=black,boxrule=0.4pt,arc=2pt,left=8pt,right=8pt,top=6pt,bottom=6pt}
+\newcommand{\solution}{\textbf{Solution.}\hspace{0.5em}}
 
 % Common math commands
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}

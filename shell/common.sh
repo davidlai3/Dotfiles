@@ -44,5 +44,6 @@ alias gc="git commit"
 alias gl="git log"
 
 # AI (LOL)
-alias claude="claude --dangerously-skip-permissions"
+# alias claude="claude --dangerously-skip-permissions"
+alias c="claude --dangerously-skip-permissions"
 alias codex="codex --yolo"
