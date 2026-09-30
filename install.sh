@@ -31,6 +31,10 @@ LINKS=(
 	"shell/common.sh|$HOME/.config/shell/common.sh"
 	"kitty/kitty.conf|$HOME/.config/kitty/kitty.conf"
 )
+[[ $(uname) == Darwin ]] && LINKS+=(
+	"macos/aerospace/aerospace.toml|$HOME/.config/aerospace/aerospace.toml"
+	"macos/karabiner/skim-vim.json|$HOME/.config/karabiner/assets/complex_modifications/skim-vim.json"
+)
 
 # The rcfile is the only shell-specific link; both rcfiles source common.sh
 # from its fixed path above, so neither has to resolve its own symlink.

@@ -53,3 +53,5 @@ bindkey '^F' autosuggest-accept
 #   fi
 #   command tmux "$@"
 # }
+export CPLUS_INCLUDE_PATH="$HOME/.local/include${CPLUS_INCLUDE_PATH:+:$CPLUS_INCLUDE_PATH}"
+alias g++='g++ -std=c++23'

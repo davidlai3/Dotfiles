@@ -7,17 +7,27 @@
 _prepend_path() { case ":$PATH:" in *":$1:"*) ;; *) PATH="$1:$PATH" ;; esac; }
 _append_path()  { case ":$PATH:" in *":$1:"*) ;; *) PATH="$PATH:$1" ;; esac; }
 
-# --- C/C++ headers ---------------------------------------------------------
-export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
-export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:../include
+case "$(uname -s)" in
+Linux)
+	# --- C/C++ headers -----------------------------------------------------
+	export CPLUS_INCLUDE_PATH=/usr/include/c++/11:/usr/include/x86_64-linux-gnu/c++/11
+	export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:../include
 
-# --- PATH ------------------------------------------------------------------
-_prepend_path /usr/local/texlive/2024/bin/x86_64-linux
+	# --- PATH --------------------------------------------------------------
+	_prepend_path /usr/local/texlive/2024/bin/x86_64-linux
+	_append_path /opt/nvim-linux64/bin
+	_append_path /opt/idea/bin
+	_append_path /usr/local/MATLAB/R2025b/bin
+	_append_path /usr/local/go/bin
+	;;
+Darwin)
+	# Homebrew puts nvim, tmux, go, node etc. in /opt/homebrew/bin on Apple silicon.
+	[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+	# MacTeX
+	_append_path /Library/TeX/texbin
+	;;
+esac
 _append_path "$HOME/.local/bin"
-_append_path /opt/nvim-linux64/bin
-_append_path /opt/idea/bin
-_append_path /usr/local/MATLAB/R2025b/bin
-_append_path /usr/local/go/bin
 export PATH
 
 unset -f _prepend_path _append_path
@@ -29,7 +39,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # --- Aliases ---------------------------------------------------------------
-alias ls='ls --color=auto'
+# macOS: GNU ls (brew coreutils) so the default ~ folders can be hidden.
+if command -v gls >/dev/null 2>&1; then
+	alias ls='gls --color=auto --hide=Movies --hide=Music --hide=Library --hide=Applications'
+else
+	alias ls='ls --color=auto'
+fi
 alias grep='grep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
