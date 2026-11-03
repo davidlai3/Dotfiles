@@ -1,6 +1,6 @@
+#include <bits/stdc++.h>    
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2")
-#include <bits/stdc++.h>    
 using namespace std;    
 using ii = pair<int, int>;
 using ll = long long;
