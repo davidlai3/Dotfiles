@@ -46,6 +46,8 @@ set -o vi
 # both if they are ever worth the startup cost.
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+bind -m vi-insert  '"\C-l": clear-screen'
+bind -m vi-command '"\C-l": clear-screen'
 
 # --- Completion ------------------------------------------------------------
 if ! shopt -oq posix; then
